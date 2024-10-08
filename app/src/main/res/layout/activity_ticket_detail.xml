@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGrey"
+    tools:context=".TicketDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"> <!-- Ensures scroll covers full screen -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Blue Background Top Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:background="@drawable/blue_bg_bottom_corner">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/world_half" />
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="Ticket Detail"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/backBtn"
+                    app:layout_constraintStart_toEndOf="@+id/backBtn"
+                    app:layout_constraintTop_toTopOf="@+id/backBtn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- White Content Section -->
+            <LinearLayout
+                android:id="@+id/tickLin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_24sdp"
+                android:background="@drawable/white_bg">
+
+                <!-- Flight Logo and Time Section -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="fitXY"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                    <TextView
+                        android:id="@+id/arrivalTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="time"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/blue"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/poppins"
+                        app:layout_constraintEnd_toEndOf="@+id/logo"
+                        app:layout_constraintStart_toStartOf="@+id/logo"
+                        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/arrivalTxt"
+                        app:srcCompat="@drawable/line_airple_blue" />
+
+                    <TextView
+                        android:id="@+id/fromTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="from"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/fromShortTxt"
+                        app:layout_constraintStart_toStartOf="@+id/fromShortTxt"
+                        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+                    <TextView
+                        android:id="@+id/fromShortTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="from"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fromTxt" />
+
+                    <TextView
+                        android:id="@+id/toTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="to"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/toShortTxt"
+                        app:layout_constraintStart_toStartOf="@+id/toShortTxt"
+                        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+                    <TextView
+                        android:id="@+id/toShortTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="to"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView11"
+                        app:layout_constraintTop_toBottomOf="@+id/toTxt" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Other Details Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:orientation="horizontal">
+
+                    <!-- From Section -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="From"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/fromSmallTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:text="Date" />
+
+                        <TextView
+                            android:id="@+id/dateTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:text="-"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- To Section -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="To"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/toSmallTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:text="Time" />
+
+                        <TextView
+                            android:id="@+id/timeTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/dash_line" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:orientation="horizontal">
+
+                    <!-- From Section -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Class"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/classtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:text="Seats" />
+
+                        <TextView
+                            android:id="@+id/seatstxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- To Section -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Airlines"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/airlineTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:text="Price" />
+
+                        <TextView
+                            android:id="@+id/priceTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/qrcode" />
+
+                </LinearLayout>
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/dash_line" />
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/barcode" />
+
+
+            </LinearLayout>
+
+            <!-- Button Section -->
+            <androidx.appcompat.widget.AppCompatButton
+                style="@android:style/Widget.Button"
+                android:background="@drawable/blue_bg"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:id="@+id/downloadBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:text="Download Ticket" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

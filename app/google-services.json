@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "572883851736",
+    "project_id": "ticko-1e368",
+    "storage_bucket": "ticko-1e368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572883851736:android:899c24af796c1f0f693aad",
+        "android_client_info": {
+          "package_name": "com.axel.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwAUN1NNO1Qo4CnjLVEmdgC64Szj9WzjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
